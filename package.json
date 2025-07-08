@@ -1,0 +1,30 @@
+{
+  "name": "node-red-zetrix",
+  "version": "1.0.0",
+  "description": "A Node-RED node to execute transaction and query from Zetrix Blockchain",
+  "dependencies": {
+    "zetrix-sdk-nodejs": "1.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/node-red/node-red-nodes/tree/master/storage/mysql"
+  },
+  "license": "Apache-2.0",
+  "keywords": [
+    "node-red",
+    "zetrix"
+  ],
+  "node-red": {
+    "nodes": {
+      "zetrix-client": "zetrix-client.js",
+      "transaction": "transaction.js",
+      "contract-invoke": "contract-invoke.js",
+      "contract-query": "contract-query.js"
+    }
+  },
+  "author": {
+    "name": "Ammar Abdullah",
+    "email": "ammar.abdullah@myeg.com.my",
+    "url": "https://zetrix.com"
+  }
+}

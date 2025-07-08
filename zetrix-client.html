@@ -1,0 +1,36 @@
+<script type="text/x-red" data-template-name="ZetrixClient">
+    <div class="form-row">
+        <label for="node-config-input-url"><i class="fa fa-globe"></i> Network</label>
+        <select id="node-config-input-url">
+            <option value="test-node.zetrix.com">Testnet</option>
+            <option value="node.zetrix.com">Mainnet</option>
+        </select>
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-config-input-name">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="ZetrixClient">
+    <p>Configuration for Zetrix blockchain connection.</p>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('ZetrixClient', {
+        category: 'config',
+        defaults: {
+            url: {
+                value: "test-node.zetrix.com",
+                required: true,
+                validate: function(v) {
+                    return v === "test-node.zetrix.com" || v === "node.zetrix.com";
+                }
+            },
+            name: { value: "" }
+        },
+        label: function() {
+            return this.name || (this.url === "test-node.zetrix.com" ? "Zetrix Testnet" : "Zetrix Mainnet");
+        }
+    });
+</script>
